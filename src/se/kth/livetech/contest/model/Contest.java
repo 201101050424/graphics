@@ -52,4 +52,20 @@ public interface Contest {
 	public int getTeamRow(int team);
 
 	public Team getRankedTeam(int rank);
+
+    public boolean isStartTeam(int team);
+
+    public boolean isBronze(int team);
+
+    public boolean isSilver(int team);
+
+    public boolean isGold(int team);
+
+    public boolean isThird(int team);
+
+    public boolean isSecond(int team);
+
+    public boolean isFirst(int team);
+
+    public boolean noAward(int team);
 }

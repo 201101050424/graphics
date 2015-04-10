@@ -252,7 +252,11 @@ public class ContestReplayControl implements PropertyListener, ContestUpdateList
 			} else {
 				showingPresentation = true;
 				Team team = contest.getRankedTeam(1);
-				showWinnerPresentation(team.getId(), winnerString);
+                if(contest.isFirst(team.getId())){
+                    showWinnerPresentation(team.getId(), winnerString);
+                } else {
+                    showingPresentation = false;
+                }
 			}
 			return 7;
 		}
@@ -273,7 +277,7 @@ public class ContestReplayControl implements PropertyListener, ContestUpdateList
 				return 1;
 			}
 			return 0;
-		} else if(resolveRow>silverMedals+goldMedals+bronzeMedals || showingPresentation) {
+		} else if(contest.noAward(team.getId()) || showingPresentation) {
 			if(showingPresentation) {
 				showScoreboard();
 			} else if (showRegionalWinners && isRegionalWinner()) {
@@ -287,34 +291,50 @@ public class ContestReplayControl implements PropertyListener, ContestUpdateList
 			showingPresentation = false;
 			// Highlight next row
 			--resolveRow;
-			highlightNext();
-			return 2;
-		} else if(resolveRow>silverMedals+goldMedals) {
-			showingPresentation = true;
-			System.out.println("Bronze medal to team " + team.getId() + " on row " + resolveRow);
-			showWinnerPresentation(team.getId(), "Bronze");
-			showBronzeMedal(resolveRow);
-			return 3;
-		} else if(resolveRow>goldMedals) {
-			showingPresentation = true;
-			System.out.println("Silver medal to team " + team.getId() + " on row " + resolveRow);
-			showWinnerPresentation(team.getId(), "Silver");
-			showSilverMedal(resolveRow);
-			return 4;
-		} else if(resolveRow>1) {
-			showingPresentation = true;
-			System.out.println("Gold medal to team " + team.getId() + " on row " + resolveRow);
-			showWinnerPresentation(team.getId(), "Gold");
-			showGoldMedal(resolveRow);
-			return 5;
-		} else {
-			showingPresentation = true;
-			System.out.println("World champion team " + team.getId() + " on row " + resolveRow);
-			showWinnerPresentation(team.getId(), winnerString);
-			showGoldMedal(resolveRow);
-			return 6;
-		}
-	}
+            highlightNext();
+            return 2;
+        } else if (contest.isBronze(team.getId())) {
+            System.out.println("Bronze medalllllllllllll to team " + team.getId() + " on row " + resolveRow);
+            showBronzeMedal(resolveRow);
+
+            showingPresentation = false;
+            --resolveRow;
+            highlightNext();
+            return 3;
+        } else if (contest.isSilver(team.getId())) {
+            System.out.println("Silver medal to team " + team.getId() + " on row " + resolveRow);
+            showSilverMedal(resolveRow);
+
+            showingPresentation = false;
+            --resolveRow;
+            highlightNext();
+            return 4;
+        } else if (contest.isGold(team.getId())) {
+            System.out.println("Gold medal to team " + team.getId() + " on row " + resolveRow);
+            showGoldMedal(resolveRow);
+
+            showingPresentation = false;
+            --resolveRow;
+            highlightNext();
+            return 5;
+        } else if (contest.isThird(team.getId())) {
+            showingPresentation = true;
+            showWinnerPresentation(team.getId(), "third");
+            showGoldMedal(resolveRow);
+            return 5;
+        } else if (contest.isSecond(team.getId())) {
+            showingPresentation = true;
+            showWinnerPresentation(team.getId(), "second");
+            showGoldMedal(resolveRow);
+            return 5;
+        } else {
+            showingPresentation = true;
+            System.out.println("World champion team " + team.getId() + " on row " + resolveRow);
+            showWinnerPresentation(team.getId(), winnerString);
+            showGoldMedal(resolveRow);
+            return 6;
+        }
+    }
 
 	@Override
 	public void contestUpdated(ContestUpdateEvent e) {
