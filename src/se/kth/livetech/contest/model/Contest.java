@@ -68,4 +68,6 @@ public interface Contest {
     public boolean isFirst(int team);
 
     public boolean noAward(int team);
+
+    public boolean isBestWomen(int team);
 }

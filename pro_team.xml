@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contest>
+    <info>
+        <length>05:00:00</length>
+        <penalty>20</penalty>
+        <started>True</started>
+        <starttime>1337241600.23</starttime>
+        <title>山东省赛</title>
+    </info>
+    <language>
+        <id>1</id>
+        <name>C++</name>
+    </language>
+    <language>
+        <id>2</id>
+        <name>C</name>
+    </language>
+    <language>
+        <id>3</id>
+        <name>Java</name>
+    </language>
+    <region>
+        <external-id>3343</external-id>
+        <name>Asia</name>
+    </region>
+    <problem>
+        <id>1</id>
+        <name>A-phone</name>
+    </problem>
+    <problem>
+        <id>2</id>
+        <name>B-ballons</name>
+    </problem>
+    <problem>
+        <id>3</id>
+        <name>C-Clockwise</name>
+    </problem>
+    <problem>
+        <id>4</id>
+        <name>D-shopping</name>
+    </problem>
+    <problem>
+        <id>5</id>
+        <name>E-emergency</name>
+    </problem>
+    <problem>
+        <id>6</id>
+        <name>F-fairytale</name>
+    </problem>
+    <problem>
+        <id>7</id>
+        <name>G-Greatestnumber</name>
+    </problem>
+    <problem>
+        <id>8</id>
+        <name>H-HelloWorld!</name>
+    </problem>
+    <problem>
+        <id>9</id>
+        <name>I-Ivancomesagain!</name>
+    </problem>
+    <problem>
+        <id>10</id>
+        <name>J-JarryMouse</name>
+    </problem>
+    <judgement>
+        <acronym>CE</acronym>
+        <id>8</id>
+        <name>Compile Error</name>
+    </judgement>
+    <judgement>
+        <acronym>RTE</acronym>
+        <id>9</id>
+        <name>Run Time Error</name>
+    </judgement>
+    <judgement>
+        <acronym>MLE</acronym>
+        <id>10</id>
+        <name>Memory Limit Exceeded</name>
+    </judgement>
+    <judgement>
+        <acronym>OLE</acronym>
+        <id>11</id>
+        <name>Output Limit Exceeded</name>
+    </judgement>
+    <judgement>
+        <acronym>TLE</acronym>
+        <id>12</id>
+        <name>Time Limit Exceeded</name>
+    </judgement>
+    <judgement>
+        <acronym>IF</acronym>
+        <id>13</id>
+        <name>Illegal Function</name>
+    </judgement>
+    <judgement>
+        <acronym>WA</acronym>
+        <id>14</id>
+        <name>Wrong Answer</name>
+    </judgement>
+    <judgement>
+        <acronym>PE</acronym>
+        <id>15</id>
+        <name>Presentation Error</name>
+    </judgement>
+    <judgement>
+        <acronym>AC</acronym>
+        <id>16</id>
+        <name>Accepted</name>
+    </judgement>
+</contest>

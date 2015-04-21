@@ -53,6 +53,7 @@ public class ContestImpl implements Contest {
     Set<Integer> thirdTeam;
     Set<Integer> secondTeam;
     Set<Integer> firstTeam;
+    Set<Integer> bestWomen;
     String startTeamDocPath = "./startTeamFile.txt";
     String bronzeTeamDocPath = "./bronzeTeamFile.txt";
     String silverTeamDocPath = "./silverTeamFile.txt";
@@ -60,6 +61,7 @@ public class ContestImpl implements Contest {
     String thirdTeamDocPath = "./thirdTeamFile.txt";
     String secondTeamDocPath = "./secondTeamFile.txt";
     String firstTeamDocPath = "./firstTeamFile.txt";
+    String bestWomenDocPath = "./bestWomen.txt";
 
     private class RunComp implements Comparator<Integer> {
         public int compare(Integer a, Integer b) {
@@ -115,6 +117,7 @@ public class ContestImpl implements Contest {
         thirdTeam = getFileInfo(thirdTeamDocPath);
         secondTeam = getFileInfo(secondTeamDocPath);
         firstTeam = getFileInfo(firstTeamDocPath);
+        bestWomen = getFileInfo(bestWomenDocPath);
     }
 
     public void reset() {
@@ -282,9 +285,13 @@ public class ContestImpl implements Contest {
         return firstTeam.contains(team);
     }
 
-    public boolean noAward(int team){
+    public boolean noAward(int team) {
         return isStartTeam(team) ||
                 (!(isBronze(team) || isSilver(team) || isGold(team) || isThird(team) || isSecond(team) || isFirst(team)));
+    }
+
+    public boolean isBestWomen(int team) {
+        return bestWomen.contains(team);
     }
 
     public int getTeamRank(int team) {
@@ -299,7 +306,7 @@ public class ContestImpl implements Contest {
         }
         return count + 1;
         /*
-		 * int index = Collections.binarySearch(ranking, team, teamComp); if
+         * int index = Collections.binarySearch(ranking, team, teamComp); if
 		 * (index < 0) index = -index - 1; while (index > 0 && ranking.get(index
 		 * - 1).compareTo(team) == 0) --index; return index + 1;
 		 */

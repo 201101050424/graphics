@@ -236,7 +236,7 @@ public class ContestReplayControl implements PropertyListener, ContestUpdateList
 		if (winnerString == null || winnerString.length() == 0) {
 			//winnerString = "ICPC 2011 Champions";
 			//winnerString = "ICPC 2012 Champions";
-			winnerString = "ICPC 2013 Champions";
+			winnerString = "冠军";
 		}
 		if(updateStepCounter) {
 			++stepCounter;
@@ -312,19 +312,23 @@ public class ContestReplayControl implements PropertyListener, ContestUpdateList
         } else if (contest.isGold(team.getId())) {
             System.out.println("Gold medal to team " + team.getId() + " on row " + resolveRow);
             showGoldMedal(resolveRow);
-
             showingPresentation = false;
             --resolveRow;
             highlightNext();
             return 5;
+        } else if (contest.isBestWomen(team.getId())) {
+            showingPresentation = true;
+            showWinnerPresentation(team.getId(), "最佳女队");
+            showGoldMedal(resolveRow);
+            return 5;
         } else if (contest.isThird(team.getId())) {
             showingPresentation = true;
-            showWinnerPresentation(team.getId(), "third");
+            showWinnerPresentation(team.getId(), "季军");
             showGoldMedal(resolveRow);
             return 5;
         } else if (contest.isSecond(team.getId())) {
             showingPresentation = true;
-            showWinnerPresentation(team.getId(), "second");
+            showWinnerPresentation(team.getId(), "亚军");
             showGoldMedal(resolveRow);
             return 5;
         } else {

@@ -26,7 +26,7 @@ public class ContentProvider {
     public static String getRankText(Contest contest, Team team) {
         // TODO "" +
         if (contest.isStartTeam(team.getId())) {
-            return "";
+            return "*";
         } else {
             return "" + contest.getTeamRank(team.getId());
         }

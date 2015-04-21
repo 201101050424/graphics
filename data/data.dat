@@ -1,0 +1,273 @@
+CSUS Programming Contest System
+Version 9.2.4 20140920 (Saturday, September 20th 2014 00:52 UTC) Java ver 1.8.0_45 build 2837 Linux 3.11.0-26-generic (i386) 
+Contest Title: Programming Contest
+On: 2015年4月19日 星期日 上午10时14分45秒  Contest date/time: Sun Apr 19 09:06:30 CST 2015
+Profile: Default (Default Contest)
+
+
+** Runs Report
+
+
+-- 48 runs --
+run 1 JUDGED s1 at 5 (Sun Apr 19 09:11:52 CST 2015) team9 (USS_Trial) A-phone GNU C++ 
+    Judgement was _not_ sent to team.
+    No submitted files found.
+      'Yes' by administrator2/s1 at 0
+
+run 2 JUDGED s1 at 5 (Sun Apr 19 09:12:06 CST 2015) team3 (USS_Constitution) D-shopping GNU C++ 
+    Judgement was _not_ sent to team.
+    No submitted files found.
+      'Yes' by administrator1/s1 at 0
+
+run 3 JUDGED s1 at 5 (Sun Apr 19 09:12:18 CST 2015) team1 (USS_Excalibur) D-shopping GNU C++ 
+    Judgement was _not_ sent to team.
+    No submitted files found.
+      'Yes' by administrator1/s1 at 0
+
+run 4 JUDGED s1 at 6 (Sun Apr 19 09:12:35 CST 2015) team5 (USS_Defiant) D-shopping GNU C++ 
+    Judgement was _not_ sent to team.
+    No submitted files found.
+      'Yes' by administrator1/s1 at 0
+
+run 5 JUDGED s1 at 6 (Sun Apr 19 09:13:27 CST 2015) team2 (USS_Enterprise) D-shopping GNU C++ 
+    Judgement was _not_ sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by administrator1/s1 at 0
+
+run 6 JUDGED s1 at 10 (Sun Apr 19 09:17:07 CST 2015) team10 (USS_Repulse) A-phone GNU C++ 
+    Judgement was _not_ sent to team.
+    No submitted files found.
+      'No - Run-time Error' by administrator1/s1 at 0
+
+run 7 JUDGED s1 at 11 (Sun Apr 19 09:17:50 CST 2015) team11 (USS_Excelsior) D-shopping GNU C++ 
+    Judgement was _not_ sent to team.
+    No submitted files found.
+      'Yes' by administrator1/s1 at 0
+
+run 8 JUDGED s1 at 13 (Sun Apr 19 09:20:06 CST 2015) team4 (USS_Reliant) D-shopping GNU C++ 
+    Judgement was _not_ sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by administrator1/s1 at 0
+
+run 9 JUDGED s1 at 15 (Sun Apr 19 09:21:35 CST 2015) team2 (USS_Enterprise) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 21
+
+run 10 JUDGED s1 at 15 (Sun Apr 19 09:22:26 CST 2015) team8 (USS_Eagle) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 21
+
+run 11 JUDGED s1 at 16 (Sun Apr 19 09:22:33 CST 2015) team9 (USS_Trial) D-shopping GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 22
+
+run 12 JUDGED s1 at 17 (Sun Apr 19 09:24:23 CST 2015) team1 (USS_Excalibur) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 21
+
+run 13 JUDGED s1 at 20 (Sun Apr 19 09:26:37 CST 2015) team3 (USS_Constitution) H-Hello World! GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Time Limit Exceeded' by judge2/s1/Validator at 22
+      'Yes' by administrator1/s1/Validator at 60
+
+run 14 JUDGED s1 at 20 (Sun Apr 19 09:26:55 CST 2015) team10 (USS_Repulse) D-shopping GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 22
+
+run 15 JUDGED s1 at 20 (Sun Apr 19 09:26:56 CST 2015) team6 (USS_Constellation) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 21
+
+run 16 JUDGED s1 at 21 (Sun Apr 19 09:27:31 CST 2015) team2 (USS_Enterprise) H-Hello World! GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Time Limit Exceeded' by judge2/s1/Validator at 23
+      'No - Wrong Answer' by administrator1/s1/Validator at 60
+
+run 17 JUDGED s1 at 23 (Sun Apr 19 09:29:56 CST 2015) team11 (USS_Excelsior) D-shopping GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 23
+
+run 18 JUDGED s1 at 23 (Sun Apr 19 09:30:29 CST 2015) team7 (USS_Endeavour) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 24
+
+run 19 JUDGED s1 at 24 (Sun Apr 19 09:30:37 CST 2015) team1 (USS_Excalibur) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 24
+
+run 20 JUDGED s1 at 26 (Sun Apr 19 09:33:18 CST 2015) team6 (USS_Constellation) H-Hello World! GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Time Limit Exceeded' by judge2/s1/Validator at 27
+      'No - Wrong Answer' by administrator1/s1/Validator at 61
+
+run 21 JUDGED s1 at 28 (Sun Apr 19 09:34:47 CST 2015) team2 (USS_Enterprise) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 28
+
+run 22 JUDGED s1 at 28 (Sun Apr 19 09:34:56 CST 2015) team5 (USS_Defiant) H-Hello World! GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Time Limit Exceeded' by judge2/s1/Validator at 28
+      'Yes' by administrator1/s1/Validator at 61
+
+run 23 JUDGED s1 at 30 (Sun Apr 19 09:37:18 CST 2015) team8 (USS_Eagle) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 31
+
+run 24 JUDGED s1 at 31 (Sun Apr 19 09:37:36 CST 2015) team1 (USS_Excalibur) B-ballons GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge1/s1/Validator at 33
+      'Yes' by administrator1/s1/Validator at 55
+
+run 25 JUDGED s1 at 31 (Sun Apr 19 09:38:16 CST 2015) team3 (USS_Constitution) B-ballons GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 32
+      'Yes' by administrator1/s1/Validator at 55
+
+run 26 JUDGED s1 at 32 (Sun Apr 19 09:38:52 CST 2015) team7 (USS_Endeavour) D-shopping GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 33
+
+run 27 JUDGED s1 at 32 (Sun Apr 19 09:39:05 CST 2015) team2 (USS_Enterprise) H-Hello World! GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Time Limit Exceeded' by judge2/s1/Validator at 33
+      'Yes' by administrator1/s1/Validator at 61
+
+run 28 JUDGED s1 at 34 (Sun Apr 19 09:40:57 CST 2015) team6 (USS_Constellation) D-shopping GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 34
+
+run 29 JUDGED s1 at 34 (Sun Apr 19 09:41:17 CST 2015) team9 (USS_Trial) H-Hello World! GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Time Limit Exceeded' by judge2/s1/Validator at 35
+      'No - Wrong Answer' by judge1/s1/Validator at 61
+
+run 30 JUDGED s1 at 35 (Sun Apr 19 09:42:06 CST 2015) team2 (USS_Enterprise) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 35
+
+run 31 JUDGED s1 at 36 (Sun Apr 19 09:43:07 CST 2015) team4 (USS_Reliant) D-shopping GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 36
+
+run 32 JUDGED s1 at 37 (Sun Apr 19 09:43:35 CST 2015) team8 (USS_Eagle) H-Hello World! GNU C++ 
+    Checked out by: JUDGE2 @ site 1
+    Judgement was sent to team.
+      main file 'H.cpp' 999 bytes
+                no additional submitted files
+      'No - Time Limit Exceeded' by judge2/s1/Validator at 37
+      'No - Wrong Answer' by judge1/s1/Validator at 62
+
+run 33 JUDGED s1 at 39 (Sun Apr 19 09:46:19 CST 2015) team2 (USS_Enterprise) D-shopping GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 40
+
+run 34 JUDGED s1 at 39 (Sun Apr 19 09:46:20 CST 2015) team8 (USS_Eagle) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 40
+
+run 35 JUDGED s1 at 40 (Sun Apr 19 09:46:31 CST 2015) team6 (USS_Constellation) H-Hello World! GNU C++ 
+    Checked out by: ADMINISTRATOR1 @ site 1
+    Judgement was sent to team.
+      main file 'H.cpp' 1031 bytes
+                no additional submitted files
+      'No - Time Limit Exceeded' by judge2/s1/Validator at 40
+
+run 36 JUDGED s1 at 42 (Sun Apr 19 09:49:09 CST 2015) team8 (USS_Eagle) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 42
+
+run 37 JUDGED s1 at 42 (Sun Apr 19 09:49:19 CST 2015) team3 (USS_Constitution) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 43
+
+run 38 JUDGED s1 at 43 (Sun Apr 19 09:49:58 CST 2015) team5 (USS_Defiant) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 44
+
+run 39 JUDGED s1 at 45 (Sun Apr 19 09:51:47 CST 2015) team8 (USS_Eagle) D-shopping GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 45
+
+run 40 JUDGED s1 at 47 (Sun Apr 19 09:53:48 CST 2015) team4 (USS_Reliant) A-phone GNU C++ 
+    Checked out by: JUDGE2 @ site 1
+    Judgement was sent to team.
+      main file 'a.cpp' 792 bytes
+                no additional submitted files
+      'No - Wrong Answer' by judge2/s1/Validator at 47
+
+run 41 JUDGED s1 at 48 (Sun Apr 19 09:55:22 CST 2015) team8 (USS_Eagle) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 49
+
+run 42 JUDGED s1 at 52 (Sun Apr 19 09:59:10 CST 2015) team4 (USS_Reliant) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 52
+
+run 43 JUDGED s1 at 53 (Sun Apr 19 09:59:48 CST 2015) team11 (USS_Excelsior) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 53
+
+run 44 JUDGED s1 at 54 (Sun Apr 19 10:00:58 CST 2015) team1 (USS_Excalibur) B-ballons GNU C++ 
+    Checked out by: ADMINISTRATOR1 @ site 1
+    Judgement was sent to team.
+      main file 'main.cpp' 1318 bytes
+                no additional submitted files
+      'No - Wrong Answer' by judge2/s1/Validator at 54
+      'No - Wrong Answer' by administrator1/s1/Validator at 55
+
+run 45 JUDGED s1 at 54 (Sun Apr 19 10:01:10 CST 2015) team11 (USS_Excelsior) A-phone GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 54
+
+run 46 JUDGED s1 at 55 (Sun Apr 19 10:02:04 CST 2015) team2 (USS_Enterprise) B-ballons GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge2/s1/Validator at 55
+      'Yes' by administrator1/s1/Validator at 56
+
+run 47 JUDGED s1 at 57 (Sun Apr 19 10:03:57 CST 2015) team3 (USS_Constitution) H-Hello World! GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 57
+
+run 48 JUDGED s1 at 67 (Sun Apr 19 10:14:12 CST 2015) team4 (USS_Reliant) H-Hello World! GNU C++ 
+    Judgement was sent to team.
+    No submitted files found.
+      'No - Wrong Answer' by judge2/s1/Validator at 67
+
+
+end report
+
