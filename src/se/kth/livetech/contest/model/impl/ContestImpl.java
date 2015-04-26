@@ -54,21 +54,21 @@ public class ContestImpl implements Contest {
     Set<Integer> secondTeam;
     Set<Integer> firstTeam;
     Set<Integer> bestWomen;
-    String startTeamDocPath = "./startTeamFile.txt";
-    String bronzeTeamDocPath = "./bronzeTeamFile.txt";
-    String silverTeamDocPath = "./silverTeamFile.txt";
-    String goldTeamDocPath = "./goldTeamFile.txt";
-    String thirdTeamDocPath = "./thirdTeamFile.txt";
-    String secondTeamDocPath = "./secondTeamFile.txt";
-    String firstTeamDocPath = "./firstTeamFile.txt";
-    String bestWomenDocPath = "./bestWomen.txt";
+    String startTeamDocPath = "./data/startTeamFile.txt";
+    String bronzeTeamDocPath = "./data/bronzeTeamFile.txt";
+    String silverTeamDocPath = "./data/silverTeamFile.txt";
+    String goldTeamDocPath = "./data/goldTeamFile.txt";
+    String thirdTeamDocPath = "./data/thirdTeamFile.txt";
+    String secondTeamDocPath = "./data/secondTeamFile.txt";
+    String firstTeamDocPath = "./data/firstTeamFile.txt";
+    String bestWomenDocPath = "./data/bestWomen.txt";
 
     private class RunComp implements Comparator<Integer> {
         public int compare(Integer a, Integer b) {
             int ta = runs.get(a).getTime();
             int tb = runs.get(b).getTime();
             return ta != tb ? ta - tb : a - b;
-        }
+    }
     }
 
     private class TeamCompScore implements Comparator<Integer> {

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contest>
+    <info>
+        <length>05:00:00</length>
+        <penalty>20</penalty>
+        <started>True</started>
+        <starttime>1430010044.0</starttime>
+        <title>山东省赛</title>
+    </info>
+    <language>
+        <id>1</id>
+        <name>C++</name>
+    </language>
+    <region>
+        <external-id>3343</external-id>
+        <name>Asia</name>
+    </region>
+    <judgement>
+        <acronym>CE</acronym>
+        <id>8</id>
+        <name>Compile Error</name>
+    </judgement>
+    <judgement>
+        <acronym>AC</acronym>
+        <id>16</id>
+        <name>Accepted</name>
+    </judgement>
+</contest>
