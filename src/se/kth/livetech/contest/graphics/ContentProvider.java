@@ -1,6 +1,7 @@
 package se.kth.livetech.contest.graphics;
 
 import java.awt.Color;
+import java.util.Arrays;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -22,6 +23,8 @@ import se.kth.livetech.presentation.graphics.Renderable;
 
 public class ContentProvider {
     public static final boolean PROBLEM_SCORES = false;
+    public static final ColoredTextBox MARGIN = new ColoredTextBox("", ContentProvider.getCountdownStyle());
+    public static final ColoredTextBox MARGIN1 = new ColoredTextBox("", ContentProvider.getCountdownStyle());
 
     public static String getRankText(Contest contest, Team team) {
         // TODO "" +
@@ -95,14 +98,14 @@ public class ContentProvider {
 
     public static Renderable getTeamLogoRenderable(Team team) {
         int id = team.getId();
-        ImageResource image = ICPCImages.getTeamLogo(id);
+        ImageResource image = ICPCImages.getTeamLogo(team.getName().split(" ")[0]);
         Renderable logo = new ImageRenderer("logo " + id, image);
         return logo;
     }
 
     public static Renderable getTeamPictureRenderable(Team team) {
         int id = team.getId();
-        ImageResource image = ICPCImages.getTeamPicture(id);
+        ImageResource image = ICPCImages.getTeamPicture(team.getName().split("")[0]);
         Renderable logo = new ImageRenderer("picture " + id, image);
         return logo;
     }
@@ -125,6 +128,10 @@ public class ContentProvider {
 
     public static ColoredTextBox.Style getTeamNameStyle() {
         return new ColoredTextBox.BaseStyle(null, ICPCFonts.TEAM_NAME_FONT, ColoredTextBox.Style.Shape.roundRect, Alignment.left);
+    }
+
+    public static ColoredTextBox.Style getNotTeamNameStyle() {
+        return new ColoredTextBox.NotBaseStyle(null, ICPCFonts.TEAM_NAME_FONT, ColoredTextBox.Style.Shape.roundRect, Alignment.left);
     }
 
     public static ColoredTextBox.Style getTeamSolvedStyle() {
@@ -212,13 +219,36 @@ public class ContentProvider {
     }
 
     public static Renderable getTeamNameRenderable(Team team) {
-        String name = team.getName(); // TODO: Contest parameter for team name display?
+        String name = team.getName().split(" ")[1]; // TODO: Contest parameter for team name display?
+        //String name = team.getUniversity();
+        System.out.println(Arrays.toString(team.getName().split(" ")));
+        String shortName = ICPCStrings.getTeamShortName(team.getId());
+        if (shortName != null) {
+            name = shortName;
+        }
+        Renderable teamName = new ColoredTextBox(name, ContentProvider.getTeamNameStyle());
+        return teamName;
+    }
+
+    public static Renderable getSchoolNameRenderable(Team team) {
+        String name = team.getName().split(" ")[0]; // TODO: Contest parameter for team name display?
         //String name = team.getUniversity();
         String shortName = ICPCStrings.getTeamShortName(team.getId());
         if (shortName != null) {
             name = shortName;
         }
         Renderable teamName = new ColoredTextBox(name, ContentProvider.getTeamNameStyle());
+        return teamName;
+    }
+
+    public static Renderable getNotTeamNameRenderable(Team team) {
+        String name = team.getName(); // TODO: Contest parameter for team name display?
+        //String name = team.getUniversity();
+        String shortName = ICPCStrings.getTeamShortName(team.getId());
+        if (shortName != null) {
+            name = shortName;
+        }
+        Renderable teamName = new ColoredTextBox(name, ContentProvider.getNotTeamNameStyle());
         return teamName;
     }
 
@@ -240,7 +270,7 @@ public class ContentProvider {
         for (@SuppressWarnings("unused") int j : c.getProblems()) {
             String p = "" + problemLetter++; //c.getProblem(j).getName();
             Renderable problem = new ColoredTextBox(p, ContentProvider.getHeaderStyle(Alignment.center));
-            r.add(problem, 1, 0.95, false);
+            r.add(problem, 1.1, 0.95, false);
         }
         return r;
     }
@@ -325,7 +355,7 @@ public class ContentProvider {
         //r.setDebug(true);
         r.add(margin, 1, 1, false, false);
         r.add(pr, 1, 1, true, false);
-        r.add(margin, 1, 1, false, false);
+        r.add(MARGIN, 1, 1, false, false);
         ColoredTextBox box2 = new ColoredTextBox(row2Text, ContentProvider.getCountdownStyle());
         ColoredTextBox box3 = new ColoredTextBox(row3Text, ContentProvider.getCountdownStyle());
         HorizontalSplitter split1 = new HorizontalSplitter(box1, r, .5);

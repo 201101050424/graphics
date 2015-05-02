@@ -293,7 +293,7 @@ public class ContestReplayControl implements PropertyListener, ContestUpdateList
             highlightNext();
             return 2;
         } else if (contest.isBronze(team.getId())) {
-            System.out.println("Bronze medalllllllllllll to team " + team.getId() + " on row " + resolveRow);
+            System.out.println("Bronze medal to team " + team.getId() + " on row " + resolveRow);
             showBronzeMedal(resolveRow);
 
             showingPresentation = false;
@@ -310,6 +310,14 @@ public class ContestReplayControl implements PropertyListener, ContestUpdateList
             return 4;
         } else if (contest.isGold(team.getId())) {
             System.out.println("Gold medal to team " + team.getId() + " on row " + resolveRow);
+
+            if (contest.isBestWomen(team.getId())) {
+                showGoldMedal(resolveRow);
+                showWinnerPresentation(team.getId(), "最佳女队");
+                showingPresentation = true;
+                return 5;
+            }
+
             showGoldMedal(resolveRow);
             showingPresentation = false;
             --resolveRow;

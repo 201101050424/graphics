@@ -181,11 +181,11 @@ public class JudgeQueueTest extends JPanel implements ContestUpdateListener, Mag
 				r.add(flag, 1, .9, true);
 			}
 
-			{ // Logo
-				ImageResource image = ICPCImages.getTeamLogo(team.getId());
-				Renderable logo = new ImageRenderer("logo " + i, image);
-				r.add(logo, 1, .9, true);
-			}
+//			{ // Logo
+//				ImageResource image = ICPCImages.getTeamLogo(team.getId());
+//				Renderable logo = new ImageRenderer("logo " + i, image);
+//				r.add(logo, 1, .9, true);
+//			}
 
 			{ // Team name
 				Renderable teamName = new ColoredTextBox(team.getName(), ContentProvider.getTeamNameStyle());

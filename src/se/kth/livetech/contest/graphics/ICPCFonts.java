@@ -9,7 +9,7 @@ import java.io.InputStream;
 
 public class ICPCFonts {
 	//private static float size = 9.0f;
-	public static final Font MASTER_FONT = new Font("Helvetica", Font.PLAIN,  20);
+	public static final Font MASTER_FONT = new Font("Monospaced", Font.PLAIN,  20);
 	
 	private static Font derive(int style, float size) {
 		return MASTER_FONT.deriveFont(style, size);

@@ -116,6 +116,104 @@ public class ColoredTextBox implements Renderable {
 		}
 	}
 
+    public static class NotBaseStyle implements Style {
+        Color color;
+        Font font;
+        Shape shape;
+        Alignment alignment;
+        Color textColor;
+
+        public NotBaseStyle(Color color, Font font, Shape shape, Alignment alignment) {
+            this(color, Color.black, font, shape, alignment);
+        }
+
+        public NotBaseStyle(Color color, Color textColor, Font font, Shape shape, Alignment alignment) {
+            this.color = color;
+            this.textColor = textColor;
+            this.font = font;
+            this.shape = shape;
+            this.alignment = alignment;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s(%s, %s, %s, %s, %s)", this.getClass().getName(), color, textColor, font, shape, alignment);
+        }
+
+        @Override
+        public Color getColor() {
+            return color;
+        }
+        @Override
+        public Color getTextColor() {
+            return textColor;
+        }
+        @Override
+        public Font getFont() {
+            return font;
+        }
+        @Override
+        public Shape getShape() {
+            return shape;
+        }
+        @Override
+        public Alignment getAlignment() {
+            return alignment;
+        }
+        @Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+            result = prime * result + ((color == null) ? 0 : color.hashCode());
+            result = prime * result + ((font == null) ? 0 : font.hashCode());
+            result = prime * result + ((shape == null) ? 0 : shape.hashCode());
+            result = prime * result + ((alignment == null) ? 0 : alignment.hashCode());
+            return result;
+        }
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            BaseStyle other = (BaseStyle) obj;
+            if (color == null) {
+                if (other.color != null) {
+                    return false;
+                }
+            } else if (!color.equals(other.color)) {
+                return false;
+            }
+            if (font == null) {
+                if (other.font != null) {
+                    return false;
+                }
+            } else if (!font.equals(other.font)) {
+                return false;
+            }
+            if (shape == null) {
+                if (other.shape != null) {
+                    return false;
+                }
+            } else if (!shape.equals(other.shape)) {
+                return false;
+            }
+            if (alignment == null) {
+                if (other.alignment != null) {
+                    return false;
+                }
+            } else if (!alignment.equals(other.alignment)) {
+                return false;
+            }
+            return true;
+        }
+    }
+
 	private String text;
 	private Style style;
 	public ColoredTextBox(String text, Style style) {

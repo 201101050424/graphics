@@ -123,7 +123,8 @@ public class PartitionedRowRenderer implements Renderable {
 			if(part.cacheImage) {
 				RenderCache.getRenderCache().render(g, x0, y0, renderer, dim);
 			}
-			else {
+			else
+            {
 				g.translate(x0, y0);
 				renderer.render(g, dim);
 				g.translate(-x0, -y0);

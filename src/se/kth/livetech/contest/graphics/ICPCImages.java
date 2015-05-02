@@ -42,9 +42,9 @@ public class ICPCImages {
 
 	private static ImageResource[] images;
 
-	private static Map<Integer, ImageResource> teamLogos = new HashMap<Integer, ImageResource>();
+	private static Map<String, ImageResource> teamLogos = new HashMap<String, ImageResource>();
 
-	private static Map<Integer, ImageResource> teamPictures = new HashMap<Integer, ImageResource>();
+	private static Map<String, ImageResource> teamPictures = new HashMap<String, ImageResource>();
 
 	private static Map<String, ImageResource> flags = new HashMap<String, ImageResource>();
 
@@ -79,19 +79,21 @@ public class ICPCImages {
 		}
 	}
 
-	static void loadLogo(int i) {
-		if (i == 0) {
-			teamLogos.put(0, new ImageResource("logos/unknown.png"));
+	static void loadLogo(String i) {
+		if (i.equals("")) {
+			teamLogos.put("", new ImageResource("logos/unknown.png"));
 		} else {
-			teamLogos.put(i, new ImageResource(String.format("logos/%d.png", i)));
+            System.out.println(String.format("pictures/%s.png",i));
+            teamLogos.put(i, new ImageResource(String.format("pictures/%s.png", i)));
 		}
 	}
 
-	static void loadPicture(int i) {
-		if (i == 0) {
-			teamPictures.put(0, new ImageResource("pictures/unknown.png"));
+	static void loadPicture(String i) {
+		if (i.equals("")) {
+			teamPictures.put("0", new ImageResource("pictures/unknown.png"));
 		} else {
-			teamPictures.put(i, new ImageResource(String.format("pictures/%d.png", i)));
+            System.out.println(String.format("pictures/%s.png",i));
+			teamPictures.put(i, new ImageResource(String.format("pictures/%s.png", i)));
 		}
 	}
 
@@ -124,14 +126,14 @@ public class ICPCImages {
 		return teamId;
 	}
 
-	public static ImageResource getTeamLogo(int teamId) {
+	public static ImageResource getTeamLogo(String teamId) {
 		if (!teamLogos.containsKey(teamId)) {
 			loadLogo(teamId);
 		}
 		return teamLogos.get(teamId);
 	}
 
-	public static ImageResource getTeamPicture(int teamId) {
+	public static ImageResource getTeamPicture(String teamId) {
 		if (!teamPictures.containsKey(teamId)) {
 			loadPicture(teamId);
 		}

@@ -54,7 +54,7 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
 	public static final double RECENT_FADE_TIME = 500; // ms
 	static final int SCROLL_KEY = -1; // FIXME: hack, remove!
 	static final int SCROLL_EXTRA = 3; // FIXME: hack, remove!
-	final int ROWS = 23; // ceil(112 / 5) == 23
+	final int ROWS = 18; // ceil(112 / 5) == 23
 	final double NAME_WEIGHT = 5;
 	final double RESULTS_WEIGHT = 5;
 	private boolean showFps = true;
@@ -224,25 +224,28 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
 				Renderable rankHeader = new ColoredTextBox("Rank", ContentProvider.getHeaderStyle(Alignment.center));
 				r.add(rankHeader, 2, 1, true);
 			}
-			
+
 			if (hypothetical) {
 				Renderable hypoHeader = new ColoredTextBox("Hypo", ContentProvider.getHeaderStyle(Alignment.center));
 				r.add(hypoHeader, HYPO_WEIGHT, 1, true);
 			}
 			r.add(null, 1, 0.9, true);
-			r.add(null, 1, 0.9, true);
-			
+//			r.add(null, 1, 0.9, true);
+
 			if (polish) {
 				Renderable teamName = new ColoredTextBox("Drużyna", ContentProvider.getHeaderStyle(Alignment.left));
 				r.add(teamName, NAME_WEIGHT, 1, false);
 			} else {
-				Renderable teamName = new ColoredTextBox("Team", ContentProvider.getHeaderStyle(Alignment.left));
-				r.add(teamName, NAME_WEIGHT, 1, false);
+				Renderable teamName = new ColoredTextBox("School", ContentProvider.getHeaderStyle(Alignment.left));
+				r.add(teamName, 2, 1, false);
+
+                Renderable schoolName = new ColoredTextBox("Team", ContentProvider.getHeaderStyle(Alignment.left));
+                r.add(schoolName, 2.17, 1, false);
 			}
 
 			Renderable resultsHeader = ContentProvider.getTeamResultsHeader(c);
 			r.addWithoutCache(resultsHeader, RESULTS_WEIGHT, 1, false);
-			
+
 			if (polish) {
 				Renderable solvedHeader = new ColoredTextBox("Punkty", ContentProvider.getHeaderStyle(Alignment.center));
 				r.add(solvedHeader, 2, 1, true);
@@ -345,31 +348,23 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
 		{ // Rank
 			String rank = ContentProvider.getRankText(c, team);
 			Renderable rankHeader = new ColoredTextBox(rank, ContentProvider.getTeamRankStyle());
-			r.add(rankHeader, 2, 1, true);
+			r.add(rankHeader, 1, 1, true);
 		}
 
-		{ // Hypothetical rank(s)
-			boolean hypothetical = this.hypothetical.getBooleanValue();
-			if (hypothetical) {
-				String hypo = ContentProvider.getHypoText(c, time, team);
-				Renderable hypoHeader = new ColoredTextBox(hypo, ContentProvider.getTeamRankStyle());
-				r.add(hypoHeader, HYPO_WEIGHT, 1, true);
-			}
-		}
-
-		{ // Flag
-			Renderable flag = ContentProvider.getTeamFlagRenderable(team);
-			r.add(flag, 1, .9, true);
-		}
 
 		{ // Logo
 			Renderable logo = ContentProvider.getTeamLogoRenderable(team);
 			r.add(logo, 1, .9, true);
 		}
 
+        { // School name
+            Renderable schoolName = ContentProvider.getSchoolNameRenderable(team);
+            r.add(schoolName, 2.3, 1, false);
+        }
+
 		{ // Team name
-			Renderable teamName = ContentProvider.getTeamNameRenderable(team);
-			r.add(teamName, NAME_WEIGHT, 1, false);
+            Renderable teamName = ContentProvider.getTeamNameRenderable(team);
+            r.add(teamName, 2.5, 1, false);
 		}
 
 
@@ -413,11 +408,35 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
 			if (rowColorations.containsKey(i)) {
 				double f = 11;
 				RoundRectangle2D round = new RoundRectangle2D.Double(row.getX(), row.getY(), row.getWidth(), row.getHeight(), row.getHeight() / f, row.getHeight() / f);
-				g.setColor(rowColorations.get(i));
-				g.fill(round);
+
+                g.setColor(rowColorations.get(i));
+
+                g.fill(round);
 			}
 
-			// Content
+            {
+                double f = 11;
+                String rank = ContentProvider.getRankText(c, team);
+                System.out.println(row.getWidth());
+                System.out.println(row.getHeight());
+                RoundRectangle2D round = new RoundRectangle2D.Double(row.getX(), row.getY()+row.getHeight(), row.getWidth(), 4, row.getHeight() / f, row.getHeight() / f);
+
+                if (!rank.equals("*")) {
+                    int rankNumber = Integer.parseInt(rank);
+                    if (rankNumber == 64) {
+                        g.setColor(ICPCColors.BRONZE);
+                        g.fill(round);
+                    } else if (rankNumber == 32) {
+                        g.setColor(ICPCColors.SILVER);
+                        g.fill(round);
+                    } else if (rankNumber == 11) {
+                        g.setColor(ICPCColors.GOLD);
+                        g.fill(round);
+                    }
+                }
+            }
+
+            // Content
 			int x = (int) row.getX();
 			int y = (int) row.getY();
 			g.translate(x, y);
@@ -429,11 +448,9 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
 				double f = 3;
 				RoundRectangle2D round = new RoundRectangle2D.Double(row.getX(), row.getY(), row.getWidth(), row.getHeight(), row.getHeight() / f, row.getHeight() / f);
 				g.setColor(ICPCColors.YELLOW);
-				g.setStroke(new BasicStroke(2.5f));
+				g.setStroke(new BasicStroke(5.5f));
 				g.draw(round);
 			}
-
-
 		}
 	}
 

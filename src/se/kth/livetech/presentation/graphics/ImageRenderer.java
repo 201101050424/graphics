@@ -16,7 +16,8 @@ public class ImageRenderer implements Renderable {
 	}
 	@Override
 	public void render(Graphics2D g, Dimension d) {
-		if (image != null) {
+
+        if (image != null) {
 			Image img = image.getScaledInstance(d);
 			//BufferedImage img = ImageRenderer.getScaledInstance(image, d.width, d.height,
 			//		RenderingHints.VALUE_INTERPOLATION_BICUBIC, true);

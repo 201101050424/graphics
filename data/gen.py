@@ -13,6 +13,7 @@ def get_element(tag, text):
 
 start_team = []
 women_temp = []
+team_map = {}
 
 
 def generate_team_info(root, file_name):
@@ -23,16 +24,33 @@ def generate_team_info(root, file_name):
         team = team.split()
         team[5] = team[5].decode('utf-8')
         team[4] = team[4].decode('utf-8')
+
+        sss = team[5]
+        sss+=' '
+        sss += team[4]
+
         team_ele = ET.Element('team')
         team_ele.append(get_element('external-id', team[1]))
         team_ele.append(get_element('id', team[1]))
-        team_ele.append(get_element('name', team[5] + '  ' + team[4]))
+        team_ele.append(get_element('name', sss))
         team_ele.append(get_element('nationality', 'China'))
         team_ele.append(get_element('region', 'Asia'))
         team_ele.append(get_element('university', team[5]))
 
+        team_map[team[1]] = team[5] + "——".decode('utf-8') + team[4]
+
+        sss = team[5]
+        for i in range(25 - len(team[5]) * 2):
+            sss += ' '
+        sss += team[4]
+
+        print sss
+        # print '%-22s%-s' % (team[5], team[4])
+        # ss=team[5].ljust(22)+team[4]
+        # print ss
+        # print team[5] + '——'.decode('utf-8') + team[4], len(team[5]), len(team[4])
         if team[6] == '1':
-            print team[1], ',,,', team[4]
+            # print team[1], ',,,', team[4]
             temp_str = team[1]
             start_team.append(temp_str)
 
@@ -40,11 +58,11 @@ def generate_team_info(root, file_name):
             women_temp.append(team[1])
 
         # print team_ele.find('name').text
-        team_name_map[team[4]] = team_ele.find('id').text
+        team_name_map[team[1]] = True
         root.append(team_ele)
 
     start_team_file = open('startTeamFile.txt', 'w')
-    print start_team
+    # print start_team
     for item in start_team:
         start_team_file.write(item + '\n')
 
@@ -77,7 +95,7 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
     i = 11
     total_line_number = len(content_list)
     start_time = time.mktime(time.strptime('09:00:44 2015-04-26', '%H:%M:%S %Y-%m-%d'))
-    print start_time
+    # print start_time
     while i < total_line_number - 3:
         each_run = []
         j = i
@@ -88,7 +106,8 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
             j += 1
         i = j + 1
 
-        match = re.match(r'run (\d+) JUDGED [\S]+? at [\S]+? \((.+?)\) [\S]+ \((.+?)\) ([\S]+?) ', each_run[0])
+        match = re.match(r'run (\d+) JUDGED [\S]+? at [\S]+? \((.+?)\) team([\d]+) \(.+?\) ([\S]+?) ', each_run[0])
+        # print match.groups()
         run_id = match.group(1)
         time_stamp = time.mktime(time.strptime(match.group(2).split(' ')[3] + ' 2015-04-26', '%H:%M:%S %Y-%m-%d'))
         elaps = time_stamp - start_time
@@ -104,17 +123,20 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
 
         # print run_id, time_stamp, elaps, team, problem, elaps, result
 
+        if team not in team_name_map:
+            continue
+
         ele_run = ET.Element("run")
         ele_run.append(get_element("id", run_id))
         ele_run.append(get_element("judged", "False"))
         ele_run.append(get_element("language", "C++"))
         ele_run.append(get_element("problem", problem_map[problem]))
         ele_run.append(get_element("status", "fresh"))
-        ele_run.append(get_element("team", team_name_map[team]))
+        ele_run.append(get_element("team", team))
         ele_run.append(get_element("time", str(elaps)))
-        print str(elaps), str(time_stamp), start_time
+        # print str(elaps), str(time_stamp), start_time
         ele_run.append(get_element("time_stamp", str(time_stamp)))
-        ET.dump(ele_run)
+        # ET.dump(ele_run)
 
         root.append(copy.deepcopy(ele_run))
 
@@ -138,7 +160,7 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
         else:
             ele_run.append(get_element("solved", "False"))
         ele_run.append(get_element("status", "done"))
-        ele_run.append(get_element("team", team_name_map[team]))
+        ele_run.append(get_element("team", team))
         ele_run.append(get_element("time", str(elaps)))
         ele_run.append(get_element("time_stamp", str(time_stamp)))
 
@@ -148,9 +170,9 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
 def generate_award():
     tree = ET.parse('result.xml')
     root = tree.getroot()
-    gold_num = 4
-    silver_num = 6
-    bronze_num = 10
+    gold_num = 11
+    silver_num = 21
+    bronze_num = 32
     standings = root.findall('teamStanding')
     rank_map = {}
     for item in standings:
@@ -165,6 +187,7 @@ def generate_award():
         if rank_map[str(temp_rank)] in start_team:
             continue
         gold_file.write(rank_map[str(temp_rank)] + '\n')
+        # print team_map[rank_map[str(temp_rank)]]
         count += 1
 
     count = 0
@@ -174,6 +197,7 @@ def generate_award():
         if rank_map[str(temp_rank)] in start_team:
             continue
         silver_file.write(rank_map[str(temp_rank)] + '\n')
+        # print team_map[rank_map[str(temp_rank)]]
         count += 1
 
     count = 0
@@ -183,6 +207,7 @@ def generate_award():
         if rank_map[str(temp_rank)] in start_team:
             continue
         silver_file.write(rank_map[str(temp_rank)] + '\n')
+        # print team_map[rank_map[str(temp_rank)]]
         count += 1
 
     min_rank = 1000000
@@ -194,6 +219,7 @@ def generate_award():
 
     first_team = open('firstTeamFile.txt', 'w')
     first_team.write(rank_map[str(min_rank)])
+    # print team_map[rank_map[str(min_rank)]]
 
     min_rank = 1000000
     for key in rank_map:
@@ -206,6 +232,7 @@ def generate_award():
 
     women_file = open('bestWomen.txt', 'w')
     women_file.write(rank_map[str(min_rank)])
+    # print team_map[rank_map[str(min_rank)]]
 
 
 if __name__ == "__main__":

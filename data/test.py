@@ -1,4 +1,5 @@
-def bar():
-    return 'abc', [42, 'python'], 'Guido'
+aList = ['a', 'b', 'c', 'd']
+aTuple = tuple(aList)
+aList[0] = 'e'
 
-print bar()
+print aList,aTuple

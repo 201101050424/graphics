@@ -13,8 +13,8 @@ import javax.imageio.ImageIO;
 import se.kth.livetech.util.DebugTrace;
 
 public class ImageResource {
-	private static String IMAGE_ROOT = "images/";
-	private static String SCALE_ROOT = "scaled/";
+	private static String IMAGE_ROOT = "./";
+	private static String SCALE_ROOT = "./";
 	private static final boolean RED_CROSS = false;
 
 	public static BufferedImage NO_IMAGE;
@@ -38,8 +38,10 @@ public class ImageResource {
 
 	public BufferedImage getImage() {
 		try {
-			return ImageIO.read(resource(path));
+            System.out.println("YYY");
+            return ImageIO.read(resource(path));
 		} catch (IOException e) {
+            System.out.println(".....");
 			this.ok = false;
 			return NO_IMAGE;
 		}
@@ -74,6 +76,7 @@ public class ImageResource {
 	}
 
 	private static File resource(String path) {
+        System.out.println(IMAGE_ROOT + path);
 		return new File(IMAGE_ROOT + path);
 	}
 	
