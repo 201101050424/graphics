@@ -25,6 +25,7 @@ public class ContentProvider {
     public static final boolean PROBLEM_SCORES = false;
     public static final ColoredTextBox MARGIN = new ColoredTextBox("", ContentProvider.getCountdownStyle());
     public static final ColoredTextBox MARGIN1 = new ColoredTextBox("", ContentProvider.getCountdownStyle());
+    public static final ImageResource Flower = new ImageResource("./pictures/flower.png");
 
     public static String getRankText(Contest contest, Team team) {
         // TODO "" +
@@ -100,6 +101,13 @@ public class ContentProvider {
         int id = team.getId();
         ImageResource image = ICPCImages.getTeamLogo(team.getName().split(" ")[0]);
         Renderable logo = new ImageRenderer("logo " + id, image);
+        return logo;
+    }
+
+    public static Renderable getGirlTeamLogoRenderable(Team team) {
+        int id = team.getId();
+        ImageResource image = Flower;
+        Renderable logo = new ImageRenderer("flower " + id, image);
         return logo;
     }
 

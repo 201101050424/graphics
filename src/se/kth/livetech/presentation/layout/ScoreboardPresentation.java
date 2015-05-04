@@ -237,10 +237,10 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
 				r.add(teamName, NAME_WEIGHT, 1, false);
 			} else {
 				Renderable teamName = new ColoredTextBox("School", ContentProvider.getHeaderStyle(Alignment.left));
-				r.add(teamName, 2, 1, false);
+				r.add(teamName, 2.3, 1, false);
 
                 Renderable schoolName = new ColoredTextBox("Team", ContentProvider.getHeaderStyle(Alignment.left));
-                r.add(schoolName, 2.17, 1, false);
+                r.add(schoolName, 1.6, 1, false);
 			}
 
 			Renderable resultsHeader = ContentProvider.getTeamResultsHeader(c);
@@ -362,9 +362,18 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
             r.add(schoolName, 2.3, 1, false);
         }
 
+        { // Girl
+            if (c.isGirlTeam(team.getId())) {
+                Renderable logo = ContentProvider.getGirlTeamLogoRenderable(team);
+                r.add(logo, 1, .9, true);
+            } else {
+                r.add(null, 1, .9, true);
+            }
+        }
+
 		{ // Team name
             Renderable teamName = ContentProvider.getTeamNameRenderable(team);
-            r.add(teamName, 2.5, 1, false);
+            r.add(teamName, 1.6, 1, false);
 		}
 
 

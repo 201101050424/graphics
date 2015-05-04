@@ -54,6 +54,7 @@ public class ContestImpl implements Contest {
     Set<Integer> secondTeam;
     Set<Integer> firstTeam;
     Set<Integer> bestWomen;
+    Set<Integer> girlTeam;
     String startTeamDocPath = "./data/startTeamFile.txt";
     String bronzeTeamDocPath = "./data/bronzeTeamFile.txt";
     String silverTeamDocPath = "./data/silverTeamFile.txt";
@@ -62,6 +63,7 @@ public class ContestImpl implements Contest {
     String secondTeamDocPath = "./data/secondTeamFile.txt";
     String firstTeamDocPath = "./data/firstTeamFile.txt";
     String bestWomenDocPath = "./data/bestWomen.txt";
+    String girlTeamDocPath = "./data/girlTeam.txt";
 
     private class RunComp implements Comparator<Integer> {
         public int compare(Integer a, Integer b) {
@@ -118,6 +120,7 @@ public class ContestImpl implements Contest {
         secondTeam = getFileInfo(secondTeamDocPath);
         firstTeam = getFileInfo(firstTeamDocPath);
         bestWomen = getFileInfo(bestWomenDocPath);
+        girlTeam = getFileInfo(girlTeamDocPath);
     }
 
     public void reset() {
@@ -292,6 +295,10 @@ public class ContestImpl implements Contest {
 
     public boolean isBestWomen(int team) {
         return bestWomen.contains(team);
+    }
+
+    public boolean isGirlTeam(int team){
+        return girlTeam.contains(team);
     }
 
     public int getTeamRank(int team) {

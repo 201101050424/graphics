@@ -70,4 +70,6 @@ public interface Contest {
     public boolean noAward(int team);
 
     public boolean isBestWomen(int team);
+
+    public boolean isGirlTeam(int team);
 }
