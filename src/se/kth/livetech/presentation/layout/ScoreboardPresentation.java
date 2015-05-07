@@ -428,18 +428,18 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
                 String rank = ContentProvider.getRankText(c, team);
                 System.out.println(row.getWidth());
                 System.out.println(row.getHeight());
-                RoundRectangle2D round = new RoundRectangle2D.Double(row.getX(), row.getY()+row.getHeight(), row.getWidth(), 4, row.getHeight() / f, row.getHeight() / f);
+                RoundRectangle2D round = new RoundRectangle2D.Double(row.getX(), row.getY()+row.getHeight(), row.getWidth(), 5.5, row.getHeight() / f, row.getHeight() / f);
 
                 if (!rank.equals("*")) {
                     int rankNumber = Integer.parseInt(rank);
                     if (rankNumber == 64) {
-                        g.setColor(ICPCColors.BRONZE);
+                        g.setColor(ICPCColors.BRONZE2);
                         g.fill(round);
                     } else if (rankNumber == 32) {
-                        g.setColor(ICPCColors.SILVER);
+                        g.setColor(ICPCColors.SILVER2);
                         g.fill(round);
                     } else if (rankNumber == 11) {
-                        g.setColor(ICPCColors.GOLD);
+                        g.setColor(ICPCColors.GOLD2);
                         g.fill(round);
                     }
                 }

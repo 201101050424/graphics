@@ -11570,7 +11570,7 @@ run 1998 JUDGED s1 at 299 (Sun Apr 26 14:00:20 CST 2015) team44 (刘飞) I GNU C
 run 1999 JUDGED s1 at 299 (Sun Apr 26 14:00:26 CST 2015) team110 (周家辉) D GNU C++ 
     Judgement was sent to team.
     No submitted files found.
-      'No - Compilation Error' by judge1/s1/Validator at 300
+      'Yes' by judge1/s1/Validator at 300
 
 run 2000 JUDGED s1 at 299 (Sun Apr 26 14:00:27 CST 2015) team26 (单仲恺) D GNU C++ 
     Judgement was sent to team.
@@ -11598,6 +11598,10 @@ run 2004 JUDGED s1 at 300 (Sun Apr 26 14:00:48 CST 2015) team109 (潘易清) K G
       'No - Wrong Answer' by judge5/s1/Computer at 300 (preliminary)
       'No - Wrong Answer' by judge1/s1/Validator at 300
 
+run 2005 JUDGED s1 at 299 (Sun Apr 26 14:00:48 CST 2015) team110 (周家辉) L GNU C++
+    Judgement was sent to team.
+    No submitted files found.
+      'Yes' by judge1/s1/Validator at 300
 
 end report
 

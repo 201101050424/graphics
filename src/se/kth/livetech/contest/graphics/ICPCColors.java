@@ -32,9 +32,9 @@ public class ICPCColors {
 	//public static final Color SOLVED_COLOR = new Color(0x2D*7/9, 0xFF*7/9, 0x00); //new Color(0, 180, 0);
 	//public static final Color FAILED_COLOR = new Color(0x9F, 0x00, 0x13); //new Color(190, 0, 0);
 
-	public static final Color GOLD2 = new Color(205,127,50,96);
+	public static final Color GOLD2 = new Color(255, 158, 59,96);
 	public static final Color SILVER2 = new Color(230,232,250,96);
-	public static final Color BRONZE2 = new Color(166,125,61,96);
+	public static final Color BRONZE2 = new Color(255, 193, 93,96);
 
 	public static final Color GOLD = new Color(180,155,30, 100);
 	public static final Color SILVER = new Color(180,180,190, 100);
