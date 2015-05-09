@@ -26,7 +26,7 @@ def generate_team_info(root, file_name):
         team[4] = team[4].decode('utf-8')
 
         sss = team[5]
-        sss+=' '
+        sss += ' '
         sss += team[4]
 
         team_ele = ET.Element('team')
@@ -94,7 +94,7 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
 
     i = 11
     total_line_number = len(content_list)
-    start_time = time.mktime(time.strptime('09:00:44 2015-04-26', '%H:%M:%S %Y-%m-%d'))
+    start_time = time.mktime(time.strptime('15:00:01 2015-05-09', '%H:%M:%S %Y-%m-%d'))
     # print start_time
     while i < total_line_number - 3:
         each_run = []
@@ -106,13 +106,14 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
             j += 1
         i = j + 1
 
-        match = re.match(r'run (\d+) JUDGED [\S]+? at [\S]+? \((.+?)\) team([\d]+) \(.+?\) ([\S]+?) ', each_run[0])
+        match = re.match(r'run (\d+) JUDGED [\S]+? at ([\S]+?) \((.+?)\) team([\d]+) \(.+?\) ([\S]+?) ', each_run[0])
         # print match.groups()
         run_id = match.group(1)
-        time_stamp = time.mktime(time.strptime(match.group(2).split(' ')[3] + ' 2015-04-26', '%H:%M:%S %Y-%m-%d'))
-        elaps = time_stamp - start_time
-        team = match.group(3)
-        problem = match.group(4)
+        elaps = int(match.group(2)) * 60.0
+        time_stamp = start_time+elaps
+
+        team = match.group(4)
+        problem = match.group(5)
 
         # print each_run
         result = ""
@@ -121,7 +122,8 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
             if line[0] == '\'':
                 result = re.search(r'\'(.+?)\'', line).group(1)
 
-        # print run_id, time_stamp, elaps, team, problem, elaps, result
+        if team=="46":
+            print run_id, time_stamp, elaps, team, problem, elaps, result
 
         if team not in team_name_map:
             continue
@@ -136,7 +138,9 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
         ele_run.append(get_element("time", str(elaps)))
         # print str(elaps), str(time_stamp), start_time
         ele_run.append(get_element("time_stamp", str(time_stamp)))
-        # ET.dump(ele_run)
+
+        # if team=="46":
+        #     ET.dump(ele_run)
 
         root.append(copy.deepcopy(ele_run))
 
