@@ -143,7 +143,6 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
 		for (int i = 1; i <= c.getTeams().size(); ++i) {
 			Team team = c.getRankedTeam(i);
 			if (team == null) {
-				System.out.println("Team is null! " + i + " / " + c.getTeams().size());
 			}
 			int id = team.getId();
 			stack.setPosition(id, i);
@@ -426,8 +425,6 @@ public class ScoreboardPresentation extends JPanel implements ContestUpdateListe
             {
                 double f = 11;
                 String rank = ContentProvider.getRankText(c, team);
-                System.out.println(row.getWidth());
-                System.out.println(row.getHeight());
                 RoundRectangle2D round = new RoundRectangle2D.Double(row.getX(), row.getY()+row.getHeight(), row.getWidth(), 5.5, row.getHeight() / f, row.getHeight() / f);
 
                 if (!rank.equals("*")) {

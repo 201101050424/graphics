@@ -100,6 +100,10 @@ public class ContentProvider {
     public static Renderable getTeamLogoRenderable(Team team) {
         int id = team.getId();
         ImageResource image = ICPCImages.getTeamLogo(team.getName().split(" ")[0]);
+        if(team.getName().split(" ")[0].equals("聊城大学"))
+        {
+            System.out.println(team.getName().split(" ")[0]+"..");
+        }
         Renderable logo = new ImageRenderer("logo " + id, image);
         return logo;
     }
@@ -229,7 +233,7 @@ public class ContentProvider {
     public static Renderable getTeamNameRenderable(Team team) {
         String name = team.getName().split(" ")[1]; // TODO: Contest parameter for team name display?
         //String name = team.getUniversity();
-        System.out.println(Arrays.toString(team.getName().split(" ")));
+//        System.out.println(Arrays.toString(team.getName().split(" ")));
         String shortName = ICPCStrings.getTeamShortName(team.getId());
         if (shortName != null) {
             name = shortName;

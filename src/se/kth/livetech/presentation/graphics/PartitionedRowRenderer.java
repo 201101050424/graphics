@@ -87,7 +87,6 @@ public class PartitionedRowRenderer implements Renderable {
 				new Point2D.Double(d.width, d.height / 2.0),
 				d.height);
 		if (debug) {
-			System.out.println("PRR set " + d);
 		}
 		for (Map.Entry<Integer, Part> it : this.parts.entrySet()) {
 			int key = it.getKey();
@@ -117,7 +116,6 @@ public class PartitionedRowRenderer implements Renderable {
 			int y0 = (int) (mid.getY() - height / 2);
 			int y1 = (int) (mid.getY() + height / 2);
 			if (debug) {
-				System.out.println("PRR marg" + margin + " H" + partitioner.getH() + " K" + key + " " + x0 + "," + y0 + " " + x1 + "," + y1);
 			}
 			Dimension dim = new Dimension(x1 - x0, y1 - y0);
 			if(part.cacheImage) {

@@ -83,7 +83,6 @@ public class ICPCImages {
 		if (i.equals("")) {
 			teamLogos.put("", new ImageResource("logos/unknown.png"));
 		} else {
-            System.out.println(String.format("pictures/%s.png",i));
             teamLogos.put(i, new ImageResource(String.format("pictures/%s.png", i)));
 		}
 	}
@@ -92,7 +91,6 @@ public class ICPCImages {
 		if (i.equals("")) {
 			teamPictures.put("0", new ImageResource("pictures/unknown.png"));
 		} else {
-            System.out.println(String.format("pictures/%s.png",i));
 			teamPictures.put(i, new ImageResource(String.format("pictures/%s.png", i)));
 		}
 	}

@@ -29,6 +29,7 @@ def generate_team_info(root, file_name):
         sss += ' '
         sss += team[4]
 
+        # print sss
         team_ele = ET.Element('team')
         team_ele.append(get_element('external-id', team[1]))
         team_ele.append(get_element('id', team[1]))
@@ -39,12 +40,10 @@ def generate_team_info(root, file_name):
 
         team_map[team[1]] = team[5] + "——".decode('utf-8') + team[4]
 
-        sss = team[5]
-        for i in range(25 - len(team[5]) * 2):
-            sss += ' '
+        sss = team[5]+' '
         sss += team[4]
 
-        print sss
+        # print sss
         # print '%-22s%-s' % (team[5], team[4])
         # ss=team[5].ljust(22)+team[4]
         # print ss
@@ -60,6 +59,10 @@ def generate_team_info(root, file_name):
         # print team_ele.find('name').text
         team_name_map[team[1]] = True
         root.append(team_ele)
+
+    girlTeam = open('girlTeamFile.txt', 'w')
+    for item in women_temp:
+        girlTeam.write(item + '\n')
 
     start_team_file = open('startTeamFile.txt', 'w')
     # print start_team
@@ -94,7 +97,7 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
 
     i = 11
     total_line_number = len(content_list)
-    start_time = time.mktime(time.strptime('15:00:01 2015-05-09', '%H:%M:%S %Y-%m-%d'))
+    start_time = time.mktime(time.strptime('09:00:09 2015-05-10', '%H:%M:%S %Y-%m-%d'))
     # print start_time
     while i < total_line_number - 3:
         each_run = []
@@ -110,7 +113,7 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
         # print match.groups()
         run_id = match.group(1)
         elaps = int(match.group(2)) * 60.0
-        time_stamp = start_time+elaps
+        time_stamp = start_time + elaps
 
         team = match.group(4)
         problem = match.group(5)
@@ -122,8 +125,8 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
             if line[0] == '\'':
                 result = re.search(r'\'(.+?)\'', line).group(1)
 
-        if team=="46":
-            print run_id, time_stamp, elaps, team, problem, elaps, result
+        # if team == "46":
+        #     print run_id, time_stamp, elaps, team, problem, elaps, result
 
         if team not in team_name_map:
             continue
@@ -140,7 +143,7 @@ def generate_run_info(root, file_name, team_name_map, problem_map):
         ele_run.append(get_element("time_stamp", str(time_stamp)))
 
         # if team=="46":
-        #     ET.dump(ele_run)
+        # ET.dump(ele_run)
 
         root.append(copy.deepcopy(ele_run))
 
@@ -191,7 +194,7 @@ def generate_award():
         if rank_map[str(temp_rank)] in start_team:
             continue
         gold_file.write(rank_map[str(temp_rank)] + '\n')
-        # print team_map[rank_map[str(temp_rank)]]
+        print team_map[rank_map[str(temp_rank)]]
         count += 1
 
     count = 0
@@ -236,7 +239,7 @@ def generate_award():
 
     women_file = open('bestWomen.txt', 'w')
     women_file.write(rank_map[str(min_rank)])
-    # print team_map[rank_map[str(min_rank)]]
+    print team_map[rank_map[str(min_rank)]]
 
 
 if __name__ == "__main__":

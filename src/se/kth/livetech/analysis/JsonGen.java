@@ -33,8 +33,6 @@ public class JsonGen implements ContestUpdateListener {
 						List<Object> current = latest;
 						if (current != latestPrinted) {
 							if (!current.equals(latestPrinted)) {
-								System.out.println("-------");
-								System.out.println(uesc(JSONValue.toJSONString(current)));
 							}
 							latestPrinted = current;
 						}
@@ -123,7 +121,5 @@ public class JsonGen implements ContestUpdateListener {
 		final LogFeed feed = new LogFeed("feed/wf13-full-0h.txt");
 		feed.addAttrsUpdateListener(replay);
 		feed.parse();
-		System.err.println();
-		System.out.println(uesc(JSONValue.toJSONString(gen.latest)));
 	}
 }

@@ -38,10 +38,8 @@ public class ImageResource {
 
 	public BufferedImage getImage() {
 		try {
-            System.out.println("YYY");
             return ImageIO.read(resource(path));
 		} catch (IOException e) {
-            System.out.println(".....");
 			this.ok = false;
 			return NO_IMAGE;
 		}
@@ -76,7 +74,6 @@ public class ImageResource {
 	}
 
 	private static File resource(String path) {
-        System.out.println(IMAGE_ROOT + path);
 		return new File(IMAGE_ROOT + path);
 	}
 	
