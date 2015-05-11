@@ -24,7 +24,7 @@ To try out loading a contest and running the resolver, in four terminals run:
     - Resolve team: 1000
     - Resolve problem: 1000
     - #Gold, Silver, Bronze, Blank: 4, 4, 4, 2
-    - Winner label: Title
+    - Winner label: 
 
     Press enter after each number, so there are no yellow text fields!
 
@@ -32,7 +32,7 @@ To try out loading a contest and running the resolver, in four terminals run:
 
     Finally run:
 
-4. `$ ./quick-file date/contest.xml`
+4. `$ ./quick-file data/contest.xml`
 
     Wait.
 
