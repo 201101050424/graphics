@@ -239,7 +239,7 @@ def generate_award():
 
     women_file = open('bestWomen.txt', 'w')
     women_file.write(rank_map[str(min_rank)])
-    print team_map[rank_map[str(min_rank)]]
+    # print team_map[rank_map[str(min_rank)]]
 
 
 if __name__ == "__main__":

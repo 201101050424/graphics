@@ -32,8 +32,10 @@ To try out loading a contest and running the resolver, in four terminals run:
 
     Finally run:
 
-4. `$ ./quick-file finals-12.txt`
+4. `$ ./quick-file date/contest.xml`
 
     Wait.
+
+5. Find the resolver control, press 'live', wait a moment, press 'Presentation step'. 
 
 To replay, press "Replay". To resolve, press "Resolve". To step through the final 14 teams, press "Presentation step".
